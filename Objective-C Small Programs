@@ -1,4 +1,6 @@
+-----------------------------------------------------------------------------------------------------------------------------
 // Fibonacci Series 
+-----------------------------------------------------------------------------------------------------------------------------
 
 -(int)fib:(int)num{
     if (num == 0) {
@@ -10,7 +12,9 @@
     return [self fib:num - 1] + [self fib:num - 2];
 }
 
+------------------------------------------------------------------------------------------------------------------------
 // Bubble Short for an NSMutableArray...
+------------------------------------------------------------------------------------------------------------------------
 
 -(NSArray *)bubbleSort:(NSMutableArray *)unsortedDataArray
 {
@@ -31,3 +35,18 @@
     }
     return unsortedDataArray;
 }
+
+--------------------------------------------------------------------------------------------------------------------
+// Reverse a NSString via Objective-c 
+--------------------------------------------------------------------------------------------------------------------
+-(NSMutableString *)reverseAString{
+NSString *myString = @"abcdefghijABCDEFGHIJ12345678";
+NSMutableString *reversedString = [NSMutableString stringWithCapacity:[myString length]];
+
+[myString enumerateSubstringsInRange:NSMakeRange(0,[myString length]) 
+                             options:(NSStringEnumerationReverse | NSStringEnumerationByComposedCharacterSequences)
+                          usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
+                            [reversedString appendString:substring];
+                        }];
+    return  reversedString;                      
+ }
