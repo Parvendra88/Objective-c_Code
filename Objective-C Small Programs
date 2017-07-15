@@ -9,3 +9,25 @@
     }
     return [self fib:num - 1] + [self fib:num - 2];
 }
+
+// Bubble Short for an NSMutableArray...
+
+-(NSArray *)bubbleSort:(NSMutableArray *)unsortedDataArray
+{
+    long count = unsortedDataArray.count;
+    int i;
+    bool swapped = TRUE;
+    while (swapped){
+    swapped = FALSE;
+    for (i=1; i<count;i++)         
+    {             
+            if ([unsortedDataArray objectAtIndex:(i-1)] > [unsortedDataArray objectAtIndex:i])
+            {
+                [unsortedDataArray exchangeObjectAtIndex:(i-1) withObjectAtIndex:i];
+                swapped = TRUE;
+            }
+            //bubbleSortCount ++; //Increment the count everytime a switch is done, this line is not required in the production implementation.
+        }
+    }
+    return unsortedDataArray;
+}
