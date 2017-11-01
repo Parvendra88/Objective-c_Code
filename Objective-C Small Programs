@@ -50,3 +50,21 @@ NSMutableString *reversedString = [NSMutableString stringWithCapacity:[myString 
                         }];
     return  reversedString;                      
  }
+
+
+--------------------------------------------------------------------------------------------------------------------
+// Find MAX AND MIN Value from an Array
+--------------------------------------------------------------------------------------------------------------------
+
+1-
+  NSNumber *max=[numberArray valueForKeyPath:@"@max.doubleValue"];
+  NSNumber *min=[numberArray valueForKeyPath:@"@min.doubleValue"];
+
+2-
+  float xmax = -MAXFLOAT;
+  float xmin = MAXFLOAT;
+  for (NSNumber *num in numbers) {
+    float x = num.floatValue;
+    if (x < xmin) xmin = x;
+    if (x > xmax) xmax = x;
+  }
